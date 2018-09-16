@@ -4,9 +4,10 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
+    "postinstall": "ng build --prod",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
@@ -15,8 +16,10 @@
     "@agm/core": "1.0.0-beta.2",
     "@angular/animations": "5.2.9",
     "@angular/cdk": "5.2.4",
+    "@angular/cli": "1.7.4",
     "@angular/common": "5.2.9",
     "@angular/compiler": "5.2.9",
+    "@angular/compiler-cli": "5.2.9",
     "@angular/core": "5.2.9",
     "@angular/forms": "5.2.9",
     "@angular/http": "5.2.9",
@@ -33,6 +36,7 @@
     "chartist": "0.11.0",
     "classlist.js": "1.1.20150312",
     "core-js": "2.4.1",
+    "express": "^4.16.3",
     "googleapis": "28.1.0",
     "hammerjs": "2.0.8",
     "jquery": "3.2.1",
@@ -40,12 +44,11 @@
     "perfect-scrollbar": "1.1.0",
     "popper.js": "1.14.3",
     "rxjs": "5.5.10",
+    "typescript": "2.4.2",
     "web-animations-js": "2.3.1",
     "zone.js": "0.8.4"
   },
   "devDependencies": {
-    "@angular/cli": "1.7.4",
-    "@angular/compiler-cli": "5.2.9",
     "@angular/language-service": "5.2.9",
     "@types/bootstrap": "3.3.32",
     "@types/chartist": "0.9.34",
@@ -63,7 +66,6 @@
     "karma-jasmine": "1.1.1",
     "protractor": "5.3.1",
     "ts-node": "5.0.1",
-    "tslint": "5.9.1",
-    "typescript": "2.4.2"
+    "tslint": "5.9.1"
   }
 }
