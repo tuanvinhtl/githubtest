@@ -23,6 +23,13 @@ import {
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginComponent } from './login/login.component';
+import { AuthenService } from './services/authen.service';
+import { WindowService } from './services/window.service';
+import { environment } from 'environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 @NgModule({
   imports: [
@@ -32,6 +39,9 @@ import { LoginComponent } from './login/login.component';
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.Initialize),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })
@@ -42,7 +52,7 @@ import { LoginComponent } from './login/login.component';
     LoginComponent,
 
   ],
-  providers: [],
+  providers: [AuthenService, WindowService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
